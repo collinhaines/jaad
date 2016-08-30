@@ -1,0 +1,39 @@
+{
+  "name": "jaad",
+  "homepage": "https://sandbox.collinhaines.com/jaad/",
+  "version": "1.0.0",
+  "description": "Just another admin dashboard.",
+  "author": "Collin Haines",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/collinhaines/jaad"
+  },
+  "scripts": {
+    "start": "meteor -settings settings.json"
+  },
+  "dependencies": {
+    "meteor-node-stubs": "~0.2.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^6.1.2",
+    "eslint": "^3.4.0",
+    "eslint-config-airbnb": "^10.0.1",
+    "eslint-plugin-import": "^1.14.0",
+    "eslint-plugin-meteor": "^4.0.0"
+  },
+  "esLintConfig": {
+    "parser": "babel-eslint",
+    "parserOptions": {
+      "allowImportExportEverywhere": true
+    },
+    "plugins": [
+      "meteor"
+    ],
+    "extends": [
+      "airbnb",
+      "plugin:meteor/recommended"
+    ]
+  },
+  "license": "Apache 2.0"
+}
