@@ -3,6 +3,7 @@ import { BlazeLayout } from 'meteor/kadira:blaze-layout';
 
 // Load components.
 import '/imports/ui/components/navigation.js';
+import '/imports/ui/components/sidebar.js';
 import '/imports/ui/components/footer.js';
 
 // Load template.
