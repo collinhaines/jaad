@@ -7,7 +7,7 @@ import '/imports/ui/components/sidebar.js';
 import '/imports/ui/components/footer.js';
 
 // Load layout.
-import '/imports/ui/layouts/app-body.js';
+import '/imports/ui/layouts/overlord.js';
 
 // Load pages.
 import '/imports/ui/pages/';
@@ -15,6 +15,6 @@ import '/imports/ui/pages/';
 FlowRouter.route('/', {
   name: 'Home',
   action() {
-    BlazeLayout.render('app-body', { main: 'dashboard' });
+    BlazeLayout.render('overlord', { main: 'dashboard' });
   }
 });
