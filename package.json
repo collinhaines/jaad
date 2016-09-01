@@ -33,7 +33,10 @@
     "extends": [
       "airbnb",
       "plugin:meteor/recommended"
-    ]
+    ],
+    "settings": {
+      "import/resolver": "meteor"
+    }
   },
   "license": "Apache 2.0"
 }
