@@ -13,6 +13,10 @@ import '/imports/ui/layouts/overlord.js';
 import '/imports/ui/pages';
 
 FlowRouter.route('/', {
+  subscriptions() {
+    this.register('overlord', Meteor.subscribe('messages'));
+  },
+
   action() {
     BlazeLayout.render('overlord', { main: 'dashboard' });
   }

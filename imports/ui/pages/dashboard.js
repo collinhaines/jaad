@@ -6,10 +6,6 @@ import { Messages } from '/imports/api/messages.js';
 
 import './dashboard.html';
 
-Template.dashboard.onCreated(function dashboardCreated() {
-  this.subscribe('messages');
-});
-
 Template.dashboard.helpers({
   randNumber() {
     let math = (Math.floor(Math.random() * (5000 - 10)) + 10).toString();
