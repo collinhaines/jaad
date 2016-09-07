@@ -61,5 +61,11 @@ Template.dashboard.onRendered(function dashboardRendered() {
       $(this).html('<i class="fa fa-angle-right"></i>');
     }
   });
+
+  // Render Pie Chart
+  new Chartist.Pie('#browser-analytics', {
+    labels: ['Chrome', 'Safari', 'Firefox'],
+    series: [40, 20, 25]
+  });
 });
 

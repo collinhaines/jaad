@@ -24,6 +24,7 @@ ejson@1.0.12
 es5-shim@4.6.14
 fastclick@1.0.12
 fortawesome:fontawesome@4.5.0
+fourseven:scss@3.8.1
 geojson-utils@1.0.9
 hot-code-push@1.0.4
 html-tools@1.0.10
@@ -40,6 +41,7 @@ livedata@1.0.18
 logging@1.1.15
 meteor@1.2.17
 meteor-base@1.0.4
+mfpierre:chartist-js@1.6.3
 minifier-css@1.2.14
 minifier-js@1.2.14
 minimongo@1.0.17
