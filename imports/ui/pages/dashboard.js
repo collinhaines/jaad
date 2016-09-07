@@ -11,6 +11,18 @@ Template.dashboard.onCreated(function dashboardCreated() {
 });
 
 Template.dashboard.helpers({
+  randNumber() {
+    let math = (Math.floor(Math.random() * (5000 - 10)) + 10).toString();
+
+    if (math.length === 4) {
+      return math.charAt(0) + ',' + math.slice(1);
+    } else if (math.length === 5) {
+      return math.substring(0, 1) + ',' + math.slice(2);
+    } else {
+      return math;
+    }
+  },
+
   message() {
     return Messages.find({});
   },
@@ -18,18 +30,4 @@ Template.dashboard.helpers({
   renderTime(timestamp) {
     return new Date(timestamp).toLocaleDateString();
   }
-});
-
-Template.dashboard.onRendered(function dashboardRendered() {
-  $('[data-demo="rand"]').each(function () {
-    let math = (Math.floor(Math.random() * (5000 - 10)) + 10).toString();
-
-    if (4 === math.length) {
-      math = math.charAt(0) + ',' + math.slice(1);
-    } else if (5 === math.length) {
-      math = math.substring(0, 1) + ',' + math.slice(2);
-    }
-
-    $(this).text(math);
-  });
 });
