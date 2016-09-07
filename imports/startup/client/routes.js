@@ -15,6 +15,7 @@ import '/imports/ui/pages';
 FlowRouter.route('/', {
   subscriptions() {
     Meteor.subscribe('messages');
+    Meteor.subscribe('tasks');
   },
 
   action() {

@@ -2,6 +2,13 @@
 // Dashboard
 // ------------------------------
 
+// Panel Insights
+.panel-insight {
+  > .panel-body {
+    font-size: 32px;
+  }
+}
+
 // Message Preview
 .message {
   padding-top: 5px;
@@ -49,10 +56,19 @@
   }
 }
 
-// Panel Insights
-.panel-insight {
+// Tasks
+.panel-task {
   > .panel-body {
-    font-size: 32px;
+    padding-top: 0;
+
+    > .task-header {
+      margin: 0 -15px;
+      padding: 3px 15px;
+
+      background-color: @gray-lighter;
+
+      .box-shadow(inset 0 0 1px 1px #fff);
+    }
   }
 }
 

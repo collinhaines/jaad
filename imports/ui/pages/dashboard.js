@@ -3,6 +3,7 @@ import { Template } from 'meteor/templating';
 import { $ } from 'meteor/jquery';
 
 import { Messages } from '/imports/api/messages.js';
+import { Tasks } from '/imports/api/tasks.js';
 
 import './dashboard.html';
 
@@ -25,6 +26,14 @@ Template.dashboard.helpers({
 
   renderTime(timestamp) {
     return new Date(timestamp).toLocaleDateString();
+  },
+
+  importantTasks() {
+    return Tasks.find({ isImportant: true });
+  },
+
+  completedTasks() {
+    return Tasks.find({ isCompleted: true });
   },
 
   calendarOptions() {

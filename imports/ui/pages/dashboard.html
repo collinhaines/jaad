@@ -84,6 +84,38 @@
   </div>
 
   <div class="col-sm-6">
+    <div class="panel panel-default panel-task">
+      <div class="panel-heading">Tasks</div>
+
+      <div class="panel-body">
+        <div class="task-header">Important</div>
+        <ul class="list-unstyled">
+          {{#each importantTasks}}
+            <li>{{subject}}</li>
+          {{/each}}
+        </ul>
+
+        <div class="task-header">Today</div>
+        <ul class="list-unstyled">
+
+        </ul>
+
+        <div class="task-header">Tomorrow</div>
+        <ul class="list-unstyled">
+
+        </ul>
+
+        <div class="task-header">Completed</div>
+        <ul class="list-unstyled">
+          {{#each completedTasks}}
+            <li>{{subject}}</li>
+          {{/each}}
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-6">
     <div class="panel panel-default">
       <div class="panel-heading">Browser Analytics</div>
 
