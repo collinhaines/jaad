@@ -20,7 +20,7 @@ Template.dashboard.helpers({
   },
 
   message() {
-    return Messages.find({});
+    return Messages.find();
   },
 
   renderTime(timestamp) {
