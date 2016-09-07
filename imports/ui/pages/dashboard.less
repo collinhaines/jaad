@@ -1,0 +1,49 @@
+//
+// Dashboard
+// ------------------------------
+
+.message {
+  padding-top: 5px;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+
+  border-bottom: 1px solid rgb(190, 190, 190);
+  border-bottom: 1px solid rgba(190, 190, 190, 0.5);
+
+  > .message-sender {
+    float: left;
+
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  > .message-time {
+    float: right;
+    padding-top: 4px;
+
+    font-size: 12px;
+    font-weight: 200;
+  }
+
+  > .message-subject {
+    float: left;
+    clear: both;
+
+    margin-top: 3px;
+    margin-bottom: 3px;
+
+    max-height: 1.2em;
+    line-height: 1.2em;
+    overflow: hidden;
+  }
+
+  > .message-content-preview {
+    clear: both;
+    max-height: 2.4em;
+
+    color: #888888;
+
+    line-height: 1.2em;
+    overflow: hidden;
+  }
+}

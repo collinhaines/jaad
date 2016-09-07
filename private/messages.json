@@ -1,0 +1,32 @@
+[
+  {
+    "sender": "Collin Haines",
+    "time": "2016-09-06T14:44:32+00:00",
+    "subject": "Lorem Ipsum Dolor",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean interdum dui lectus, nec egestas metus convallis sed. Nunc blandit ex ut tortor placerat pellentesque."
+  },
+  {
+    "sender": "Chuck Griffin",
+    "time": "2016-09-06T14:03:56+00:00",
+    "subject": "Consectetur Adipiscing Elit",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean interdum dui lectus, nec egestas metus convallis sed. Nunc blandit ex ut tortor placerat pellentesque."
+  },
+  {
+    "sender": "Angela Tisdale",
+    "time": "2016-09-06T13:37:23+00:00",
+    "subject": "Aenean Interdum Dui Lectus",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean interdum dui lectus, nec egestas metus convallis sed. Nunc blandit ex ut tortor placerat pellentesque."
+  },
+  {
+    "sender": "Cubert J. Farnsworth",
+    "time": "3005-09-06T12:47:18+00:00",
+    "subject": "Nunc Blandit Ex UT Tortor",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Good news! Aenean interdum dui lectus, nec egestas metus convallis sed. Nunc blandit ex ut tortor placerat pellentesque."
+  },
+  {
+    "sender": "Sam Clembot",
+    "time": "2016-09-05T18:14:18+00:00",
+    "subject": "Nec Egestas Metus",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean interdum dui lectus, nec egestas metus convallis sed. Nunc blandit ex ut tortor placerat pellentesque."
+  }
+]
