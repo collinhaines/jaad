@@ -14,7 +14,7 @@ import '/imports/ui/pages';
 
 FlowRouter.route('/', {
   subscriptions() {
-    this.register('overlord', Meteor.subscribe('messages'));
+    Meteor.subscribe('messages');
   },
 
   action() {
