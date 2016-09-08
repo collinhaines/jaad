@@ -5,6 +5,7 @@ import { $ } from 'meteor/jquery';
 import { Messages } from '/imports/api/messages.js';
 import { Tasks } from '/imports/api/tasks.js';
 
+import '/imports/ui/components/tasks.js';
 import './dashboard.html';
 
 Template.dashboard.helpers({
@@ -16,18 +17,31 @@ Template.dashboard.helpers({
   },
 
   importantTasks() {
-    return Tasks.find({ isImportant: true });
+    return Tasks.find({
+      isImportant: true,
+      isCompleted: false
+    });
   },
 
-  completedTasks() {
-    return Tasks.find({ isCompleted: true });
-  },
+  otherTasks(type) {
+    let   items  = [];
+    const date   = new Date('2016-09-10T00:00:00.000Z');
+    const tasks  = Tasks.find({
+      isCompleted: false,
+      isImportant: false
+    }).fetch();
 
-  otherTasks() {
-    return [
-      {"subject": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."},
-      {"subject": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."}
-    ];
+    for (let i = 0; i < tasks.length; i++) {
+      const temp = new Date(tasks[i].date);
+
+      if (temp.getDate() === date.getDate() && type === 'today') {
+        items.push(tasks[i]);
+      } else if (temp.getDate() - 1 === date.getDate() && type === 'tomorrow') {
+        items.push(tasks[i]);
+      }
+    }
+
+    return items;
   },
 
   //
@@ -93,4 +107,3 @@ Template.dashboard.onRendered(function dashboardRendered() {
     series: [40, 20, 25]
   });
 });
-

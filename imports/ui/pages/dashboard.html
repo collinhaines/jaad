@@ -90,47 +90,27 @@
       <div class="panel-body">
         <div class="task-header">Important</div>
         <ul class="list-unstyled">
-          {{#each importantTasks}}
-            <li class="checkbox">
-              <label>
-                <input type="checkbox">{{subject}}
-              </label>
-            </li>
+          {{#each task in importantTasks}}
+            {{> tasks task=task}}
           {{/each}}
         </ul>
 
         <div class="task-header">Today</div>
         <ul class="list-unstyled">
-          {{#each otherTasks}}
-            <li class="checkbox">
-              <label>
-                <input type="checkbox">{{subject}}
-              </label>
-            </li>
+          {{#each task in otherTasks "today"}}
+            {{> tasks task=task}}
           {{/each}}
         </ul>
 
         <div class="task-header">Tomorrow</div>
         <ul class="list-unstyled">
-          {{#each otherTasks}}
-            <li class="checkbox">
-              <label>
-                <input type="checkbox">{{subject}}
-              </label>
-            </li>
+          {{#each task in otherTasks "tomorrow"}}
+            {{> tasks task=task}}
           {{/each}}
         </ul>
 
         <div class="task-header">Completed</div>
-        <ul class="list-unstyled">
-          {{#each completedTasks}}
-            <li class="checkbox">
-              <label>
-                <input type="checkbox">{{subject}}
-              </label>
-            </li>
-          {{/each}}
-        </ul>
+        <ul class="list-unstyled list-tasks-completed"></ul>
       </div>
     </div>
   </div>
