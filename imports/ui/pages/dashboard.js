@@ -23,6 +23,13 @@ Template.dashboard.helpers({
     return Tasks.find({ isCompleted: true });
   },
 
+  otherTasks() {
+    return [
+      {"subject": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."},
+      {"subject": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."}
+    ];
+  },
+
   //
   // Functions
   //

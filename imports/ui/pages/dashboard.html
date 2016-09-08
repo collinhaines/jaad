@@ -91,24 +91,44 @@
         <div class="task-header">Important</div>
         <ul class="list-unstyled">
           {{#each importantTasks}}
-            <li>{{subject}}</li>
+            <li class="checkbox">
+              <label>
+                <input type="checkbox">{{subject}}
+              </label>
+            </li>
           {{/each}}
         </ul>
 
         <div class="task-header">Today</div>
         <ul class="list-unstyled">
-
+          {{#each otherTasks}}
+            <li class="checkbox">
+              <label>
+                <input type="checkbox">{{subject}}
+              </label>
+            </li>
+          {{/each}}
         </ul>
 
         <div class="task-header">Tomorrow</div>
         <ul class="list-unstyled">
-
+          {{#each otherTasks}}
+            <li class="checkbox">
+              <label>
+                <input type="checkbox">{{subject}}
+              </label>
+            </li>
+          {{/each}}
         </ul>
 
         <div class="task-header">Completed</div>
         <ul class="list-unstyled">
           {{#each completedTasks}}
-            <li>{{subject}}</li>
+            <li class="checkbox">
+              <label>
+                <input type="checkbox">{{subject}}
+              </label>
+            </li>
           {{/each}}
         </ul>
       </div>
