@@ -8,7 +8,25 @@ import { Tasks } from '/imports/api/tasks.js';
 import './dashboard.html';
 
 Template.dashboard.helpers({
-  randNumber() {
+  //
+  // Database
+  //
+  message() {
+    return Messages.find();
+  },
+
+  importantTasks() {
+    return Tasks.find({ isImportant: true });
+  },
+
+  completedTasks() {
+    return Tasks.find({ isCompleted: true });
+  },
+
+  //
+  // Functions
+  //
+  randomNumber() {
     let math = (Math.floor(Math.random() * (5000 - 10)) + 10).toString();
 
     if (math.length === 4) {
@@ -20,22 +38,13 @@ Template.dashboard.helpers({
     }
   },
 
-  message() {
-    return Messages.find();
-  },
-
   renderTime(timestamp) {
     return new Date(timestamp).toLocaleDateString();
   },
 
-  importantTasks() {
-    return Tasks.find({ isImportant: true });
-  },
-
-  completedTasks() {
-    return Tasks.find({ isCompleted: true });
-  },
-
+  //
+  // Other
+  //
   calendarOptions() {
     return {
       defaultView: 'agendaDay',
