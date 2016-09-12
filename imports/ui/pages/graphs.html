@@ -7,4 +7,32 @@
       <li class="active">Graphs</li>
     </ul>
   </div>
+
+  {{> graphPanel title="Line Graph: Basic" id="line-graph-basic"}}
+
+  {{> graphPanel title="Line Graph: Area" id="line-graph-area"}}
+
+  {{> graphPanel title="Bar Graph: Basic" id="bar-graph-basic"}}
+
+  {{> graphPanel title="Bar Graph: Multi" id="bar-graph-multi"}}
+
+  {{> graphPanel title="Bar Graph: Stacked" id="bar-graph-stacked"}}
+
+  {{> graphPanel title="Bar Graph: Horizontal" id="bar-graph-horizontal"}}
+
+  {{> graphPanel title="Pie Graph: Basic" id="pie-graph-basic"}}
+
+  {{> graphPanel title="Pie Graph: Gauge" id="pie-graph-gauge"}}
+</template>
+
+<template name="graphPanel">
+  <div class="col-xs-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">{{title}}</div>
+
+      <div class="panel-body">
+        <div id="{{id}}"></div>
+      </div>
+    </div>
+  </div>
 </template>
