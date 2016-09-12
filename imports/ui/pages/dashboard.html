@@ -1,128 +1,136 @@
 <template name="dashboard">
   <div class="main-header">
+    <h1>J.A.A.D</h1>
+
     <ul class="breadcrumb">
       <li>Overview</li>
       <li class="active">Dashboard</li>
     </ul>
   </div>
 
-  <div class="col-sm-3">
-    <div class="panel panel-default panel-insight">
-      <div class="panel-heading">Sales</div>
+  <div class="row">
+    <div class="col-sm-3">
+      <div class="panel panel-default panel-insight">
+        <div class="panel-heading">Sales</div>
 
-      <div class="panel-body text-center">${{randomNumber}}</div>
+        <div class="panel-body text-center">${{randomNumber}}</div>
 
-      <div class="panel-footer text-center text-success">
-        <i class="fa fa-arrow-up"></i> 2% in the past 7 days
+        <div class="panel-footer text-center text-success">
+          <i class="fa fa-arrow-up"></i> 2% in the past 7 days
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-3">
+      <div class="panel panel-default panel-insight">
+        <div class="panel-heading">Views</div>
+
+        <div class="panel-body text-center">{{randomNumber}}</div>
+
+        <div class="panel-footer text-center text-danger">
+          <i class="fa fa-arrow-down"></i> 3% in the past 7 days
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-3">
+      <div class="panel panel-default panel-insight">
+        <div class="panel-heading">Accounts</div>
+
+        <div class="panel-body text-center">{{randomNumber}}</div>
+
+        <div class="panel-footer text-center text-success">
+          <i class="fa fa-arrow-up"></i> 40% in the past 31 days
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-3">
+      <div class="panel panel-default panel-insight">
+        <div class="panel-heading">Orders</div>
+
+        <div class="panel-body text-center">{{randomNumber}}</div>
+
+        <div class="panel-footer text-center text-warning">
+          <i class="fa fa-arrow-up"></i> 0.1% up in the past 7 days
+        </div>
       </div>
     </div>
   </div>
 
-  <div class="col-sm-3">
-    <div class="panel panel-default panel-insight">
-      <div class="panel-heading">Views</div>
+  <div class="row">
+    <div class="col-sm-8">
+      <div class="panel panel-default">
+        <div class="panel-heading">Calender</div>
 
-      <div class="panel-body text-center">{{randomNumber}}</div>
-
-      <div class="panel-footer text-center text-danger">
-        <i class="fa fa-arrow-down"></i> 3% in the past 7 days
+        <div class="panel-body">
+          {{> fullcalendar calendarOptions }}
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="col-sm-3">
-    <div class="panel panel-default panel-insight">
-      <div class="panel-heading">Accounts</div>
+    <div class="col-sm-4">
+      <div class="panel panel-default">
+        <div class="panel-heading">Messages</div>
 
-      <div class="panel-body text-center">{{randomNumber}}</div>
-
-      <div class="panel-footer text-center text-success">
-        <i class="fa fa-arrow-up"></i> 40% in the past 31 days
-      </div>
-    </div>
-  </div>
-
-  <div class="col-sm-3">
-    <div class="panel panel-default panel-insight">
-      <div class="panel-heading">Orders</div>
-
-      <div class="panel-body text-center">{{randomNumber}}</div>
-
-      <div class="panel-footer text-center text-warning">
-        <i class="fa fa-arrow-up"></i> 0.1% up in the past 7 days
-      </div>
-    </div>
-  </div>
-
-  <div class="col-sm-8">
-    <div class="panel panel-default">
-      <div class="panel-heading">Calender</div>
-
-      <div class="panel-body">
-        {{> fullcalendar calendarOptions }}
-      </div>
-    </div>
-  </div>
-
-  <div class="col-sm-4">
-    <div class="panel panel-default">
-      <div class="panel-heading">Messages</div>
-
-      <div class="panel-body">
-        {{#each message}}
-          <div class="message">
-            <div class="message-sender">{{sender}}</div>
-            <div class="message-time">{{renderTime time}}</div>
-            <div class="message-subject">{{subject}}</div>
-            <div class="message-content-preview">{{content}}</div>
-          </div>
-        {{/each}}
-      </div>
-
-      <div class="panel-footer">
-        <a href="mailbox.html">View all messages...</a>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-sm-6">
-    <div class="panel panel-default panel-task">
-      <div class="panel-heading">Tasks</div>
-
-      <div class="panel-body">
-        <div class="task-header">Important</div>
-        <ul class="list-unstyled">
-          {{#each task in importantTasks}}
-            {{> tasks task=task}}
+        <div class="panel-body">
+          {{#each message}}
+            <div class="message">
+              <div class="message-sender">{{sender}}</div>
+              <div class="message-time">{{renderTime time}}</div>
+              <div class="message-subject">{{subject}}</div>
+              <div class="message-content-preview">{{content}}</div>
+            </div>
           {{/each}}
-        </ul>
+        </div>
 
-        <div class="task-header">Today</div>
-        <ul class="list-unstyled">
-          {{#each task in otherTasks "today"}}
-            {{> tasks task=task}}
-          {{/each}}
-        </ul>
-
-        <div class="task-header">Tomorrow</div>
-        <ul class="list-unstyled">
-          {{#each task in otherTasks "tomorrow"}}
-            {{> tasks task=task}}
-          {{/each}}
-        </ul>
-
-        <div class="task-header">Completed</div>
-        <ul class="list-unstyled list-tasks-completed"></ul>
+        <div class="panel-footer">
+          <a href="mailbox.html">View all messages...</a>
+        </div>
       </div>
     </div>
   </div>
 
-  <div class="col-sm-6">
-    <div class="panel panel-default">
-      <div class="panel-heading">Browser Analytics</div>
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="panel panel-default panel-task">
+        <div class="panel-heading">Tasks</div>
 
-      <div class="panel-body">
-        <div class="ct-chart ct-perfect-fourth" id="browser-analytics"></div>
+        <div class="panel-body">
+          <div class="task-header">Important</div>
+          <ul class="list-unstyled">
+            {{#each task in importantTasks}}
+              {{> tasks task=task}}
+            {{/each}}
+          </ul>
+
+          <div class="task-header">Today</div>
+          <ul class="list-unstyled">
+            {{#each task in otherTasks "today"}}
+              {{> tasks task=task}}
+            {{/each}}
+          </ul>
+
+          <div class="task-header">Tomorrow</div>
+          <ul class="list-unstyled">
+            {{#each task in otherTasks "tomorrow"}}
+              {{> tasks task=task}}
+            {{/each}}
+          </ul>
+
+          <div class="task-header">Completed</div>
+          <ul class="list-unstyled list-tasks-completed"></ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-6">
+      <div class="panel panel-default">
+        <div class="panel-heading">Browser Analytics</div>
+
+        <div class="panel-body">
+          <div class="ct-chart ct-perfect-fourth" id="browser-analytics"></div>
+        </div>
       </div>
     </div>
   </div>
