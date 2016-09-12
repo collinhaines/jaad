@@ -87,7 +87,7 @@ Template.dashboard.helpers({
   }
 });
 
-Template.dashboard.onRendered(function dashboardRendered() {
+Template.dashboard.onRendered(() => {
   // Override FullCalendar's default look to match the flat look of the dashboard.
   $('.fc-toolbar button').each(function () {
     $(this)

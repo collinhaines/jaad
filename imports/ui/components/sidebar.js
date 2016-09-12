@@ -3,7 +3,7 @@ import { $ } from 'meteor/jquery';
 
 import './sidebar.html';
 
-Template.sidebar.onRendered(function sidebarRendered() {
+Template.sidebar.onRendered(() => {
   // When rendered add the active class.
   $('li:not(.nav-category) > a[href="' + FlowRouter.current().route.path + '"]')
     .parent()
