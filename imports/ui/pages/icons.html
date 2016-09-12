@@ -7,4 +7,32 @@
       <li class="active">Icons</li>
     </ul>
   </div>
+
+  <div class="col-xs-12">
+    <div class="panel panel-default">
+      <div class="panel-heading">Glyphicons <small>Version: 3.3.7 - Total: 262</small></div>
+
+      <div class="panel-body">
+        {{#each icon in glyphiconList}}
+          <div class="col-xs-3">
+            <i class="glyphicon glyphicon-{{icon}}"></i> glyphicon-{{icon}}
+          </div>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+
+  <div class="col-xs-12">
+    <div class="panel panel-default">
+      <div class="panel-heading">Font-Awesome <small>Version: 4.6.3 - Total: 647</small></div>
+
+      <div class="panel-body">
+        {{#each icon in fontAwesomeList}}
+          <div class="col-xs-3">
+            <i class="fa fa-{{icon}}"></i> fa-{{icon}}
+          </div>
+        {{/each}}
+      </div>
+    </div>
+  </div>
 </template>
