@@ -7,4 +7,106 @@
       <li class="active">Tables</li>
     </ul>
   </div>
+
+  <div class="row">
+    {{> tablePanel heading="Table: Basic" classes="table"}}
+
+    {{> tablePanel heading="Table: Striped" classes="table table-striped"}}
+  </div>
+
+  <div class="row">
+    {{> tablePanel heading="Table: Bordered" classes="table table-bordered"}}
+
+    {{> tablePanel heading="Table: Hover Rows" classes="table table-hover"}}
+  </div>
+
+  <div class="row">
+    {{> tablePanel heading="Table: Condensed" classes="table table-condensed"}}
+
+    <div class="col-xs-6">
+      <div class="panel panel-default">
+        <div class="panel-heading">Table: Contextual</div>
+
+        <div class="panel-body">
+          <table class="table">
+            <thead>
+              <tr>
+                <td>#</td>
+                <td>First Name</td>
+                <td>Last Name</td>
+                <td>Username</td>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr class="active">
+                <td>1</td>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+              </tr>
+
+              <tr class="success">
+                <td>2</td>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+              </tr>
+
+              <tr class="warning">
+                <td>3</td>
+                <td>Larry</td>
+                <td>the Bird</td>
+                <td>@twitter</td>
+              </tr>
+
+              <tr class="danger">
+                <td>4</td>
+                <td>John</td>
+                <td>Smith</td>
+                <td>@john-smith</td>
+              </tr>
+
+              <tr class="info">
+                <td>5</td>
+                <td>Wall</td>
+                <td>E</td>
+                <td>@info-class</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<template name="tablePanel">
+  <div class="col-xs-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">{{heading}}</div>
+
+      <div class="panel-body">
+        <table class="{{classes}}">
+          <thead>
+            <tr>
+              {{#each data in headerData}}
+                <td>{{data}}</td>
+              {{/each}}
+            </tr>
+          </thead>
+
+          <tbody>
+            {{#each data in bodyData}}
+              <tr>
+                {{#each item in data.row}}
+                  <td>{{item}}</td>
+                {{/each}}
+              </tr>
+            {{/each}}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
 </template>
