@@ -9,34 +9,38 @@
   </div>
 
   <div class="row">
-    {{> graphPanel title="Line Graph: Basic" id="line-graph-basic"}}
+    {{> graphPanel heading="Line Graph: Basic" subheading="An example of a simple line graph with three series." id="line-graph-basic"}}
 
-    {{> graphPanel title="Line Graph: Area" id="line-graph-area"}}
+    {{> graphPanel heading="Line Graph: Area" subheading="Utilizing the showArea option." id="line-graph-area"}}
   </div>
 
   <div class="row">
-    {{> graphPanel title="Bar Graph: Basic" id="bar-graph-basic"}}
+    {{> graphPanel heading="Bar Graph: Basic" subheading="An example of a simple bar graph." id="bar-graph-basic"}}
 
-    {{> graphPanel title="Bar Graph: Multi" id="bar-graph-multi"}}
+    {{> graphPanel heading="Bar Graph: Multi" subheading="Add another value to the same X values." id="bar-graph-multi"}}
   </div>
 
   <div class="row">
-    {{> graphPanel title="Bar Graph: Stacked" id="bar-graph-stacked"}}
+    {{> graphPanel heading="Bar Graph: Stacked" subheading="Set your bar graph to stack the series bars on top of each other." id="bar-graph-stacked"}}
 
-    {{> graphPanel title="Bar Graph: Horizontal" id="bar-graph-horizontal"}}
+    {{> graphPanel heading="Bar Graph: Horizontal" subheading="Creating horizontal bar charts is as simple as it can get." id="bar-graph-horizontal"}}
   </div>
 
   <div class="row">
-    {{> graphPanel title="Pie Graph: Basic" id="pie-graph-basic"}}
+    {{> graphPanel heading="Pie Graph: Basic" subheading="Simple pie graph with label interpolation to show percentage instead of the actual data series value." id="pie-graph-basic"}}
 
-    {{> graphPanel title="Pie Graph: Gauge" id="pie-graph-gauge"}}
+    {{> graphPanel heading="Pie Graph: Gauge" subheading="A combination of a donut and pie graph into one." id="pie-graph-gauge"}}
   </div>
 </template>
 
 <template name="graphPanel">
   <div class="col-xs-6">
     <div class="panel panel-default">
-      <div class="panel-heading">{{title}}</div>
+      <div class="panel-heading">
+        <h4>{{heading}}</h4>
+
+        <div class="panel-subheading">{{subheading}}</div>
+      </div>
 
       <div class="panel-body">
         <div id="{{id}}"></div>

@@ -1,3 +1,7 @@
+//
+// Chartist: https://gionkunz.github.io/chartist-js/
+//
+
 import './graphs.html';
 
 import { Template } from 'meteor/templating';

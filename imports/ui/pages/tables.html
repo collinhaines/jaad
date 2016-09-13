@@ -9,26 +9,30 @@
   </div>
 
   <div class="row">
-    {{> tablePanel heading="Table: Basic" classes="table"}}
+    {{> tablePanel heading="Table: Basic" subheading="For basic styling—light padding and only horizontal dividers." classes=""}}
 
-    {{> tablePanel heading="Table: Striped" classes="table table-striped"}}
+    {{> tablePanel heading="Table: Striped" subheading="Add zebra-striping to any table rows." classes="table-striped"}}
   </div>
 
   <div class="row">
-    {{> tablePanel heading="Table: Bordered" classes="table table-bordered"}}
+    {{> tablePanel heading="Table: Bordered" subheading="Borders on all sides of the table and cells." classes="table-bordered"}}
 
-    {{> tablePanel heading="Table: Hover Rows" classes="table table-hover"}}
+    {{> tablePanel heading="Table: Hover Rows" subheading="Enable a hover state on table rows." classes="table-hover"}}
   </div>
 
   <div class="row">
-    {{> tablePanel heading="Table: Condensed" classes="table table-condensed"}}
+    {{> tablePanel heading="Table: Condensed" subheading="Make tables more compact by cutting cell padding in half." classes="table-condensed"}}
 
     <div class="col-xs-6">
       <div class="panel panel-default">
-        <div class="panel-heading">Table: Contextual</div>
+        <div class="panel-heading">
+          <h4>Table: Contextual</h4>
+
+          <div class="panel-subheading">Use contextual classes to color table rows or individual cells.</div>
+        </div>
 
         <div class="panel-body">
-          <table class="table">
+          <table class="table table-responsive">
             <thead>
               <tr>
                 <td>#</td>
@@ -84,10 +88,14 @@
 <template name="tablePanel">
   <div class="col-xs-6">
     <div class="panel panel-default">
-      <div class="panel-heading">{{heading}}</div>
+      <div class="panel-heading">
+        <h4>{{heading}}</h4>
+
+        <div class="panel-subheading">{{subheading}}</div>
+      </div>
 
       <div class="panel-body">
-        <table class="{{classes}}">
+        <table class="table table-responsive {{classes}}">
           <thead>
             <tr>
               {{#each data in headerData}}
