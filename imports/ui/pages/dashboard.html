@@ -72,18 +72,18 @@
         <div class="panel-heading">Messages</div>
 
         <div class="panel-body">
-          {{#each message}}
-            <div class="message">
-              <div class="message-sender">{{sender}}</div>
-              <div class="message-time">{{renderTime time}}</div>
-              <div class="message-subject">{{subject}}</div>
-              <div class="message-content-preview">{{content}}</div>
+          {{#each message in messages}}
+            <div class="message-preview">
+              <div class="message-preview-sender">{{message.sender}}</div>
+              <div class="message-preview-time">{{renderTime message.time}}</div>
+              <div class="message-preview-subject">{{message.subject}}</div>
+              <div class="message-preview-content">{{{message.content}}}</div>
             </div>
           {{/each}}
         </div>
 
         <div class="panel-footer">
-          <a href="mailbox.html">View all messages...</a>
+          <a href="/mailbox">View all messages...</a>
         </div>
       </div>
     </div>

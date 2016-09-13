@@ -12,7 +12,7 @@ Template.dashboard.helpers({
   //
   // Database
   //
-  message() {
+  messages() {
     return Messages.find();
   },
 

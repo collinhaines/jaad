@@ -1,10 +1,36 @@
 <template name="mailbox">
   <div class="main-header">
-    <h1>Mailbox</h1>
-
     <ul class="breadcrumb">
       <li>Overview</li>
       <li class="active">Mailbox</li>
     </ul>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-3">
+      <div class="message-preview-column">
+        {{#each message in messages}}
+          <div class="message-preview" data-id="{{message._id}}">
+            <div class="message-preview-sender">{{message.sender}}</div>
+            <div class="message-preview-time">{{renderPreviewTime message.time}}</div>
+            <div class="message-preview-subject">{{message.subject}}</div>
+            <div class="message-preview-content">{{{message.content}}}</div>
+          </div>
+        {{/each}}
+      </div>
+    </div>
+
+    <div class="col-xs-9">
+      <div class="message-overview">
+        {{#if currentMessage}}
+          <div class="message-time">{{renderMessageTime currentMessage.time}}</div>
+          <div class="message-sender">{{currentMessage.sender}}</div>
+          <div class="message-subject">{{currentMessage.subject}}</div>
+          <div class="message-content">{{{currentMessage.content}}}</div>
+        {{else}}
+          <h3 class="no-message">No Message Selected</h3>
+        {{/if}}
+      </div>
+    </div>
   </div>
 </template>

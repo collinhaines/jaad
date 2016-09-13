@@ -30,6 +30,10 @@ FlowRouter.route('/calendar', {
 });
 
 FlowRouter.route('/mailbox', {
+  subscriptions() {
+    this.register('messages', Meteor.subscribe('messages'));
+  },
+
   action() {
     BlazeLayout.render('overlord', { main: 'mailbox' });
   }
