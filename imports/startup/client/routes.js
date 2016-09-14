@@ -81,6 +81,12 @@ FlowRouter.route('/typography', {
   }
 });
 
+FlowRouter.route('/other-elements', {
+  action() {
+    BlazeLayout.render('overlord', { main: 'otherElements' });
+  }
+});
+
 FlowRouter.route('/404', {
   action() {
     BlazeLayout.render('overlord', { main: '404' });

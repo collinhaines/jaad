@@ -13,6 +13,7 @@ import './alerts.js';
 import './grid.js';
 import './icons.js';
 import './typography.js';
+import './other-elements.js';
 
 // Pages
 import './404.js';
