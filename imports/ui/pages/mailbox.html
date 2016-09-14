@@ -8,7 +8,7 @@
 
   <div class="row">
     <div class="col-xs-3">
-      <div class="message-preview-column">
+      <div class="message-preview-column" id="message-preview-column">
         {{#each message in messages}}
           <div class="message-preview" data-id="{{message._id}}">
             <div class="message-preview-sender">{{message.sender}}</div>
@@ -21,7 +21,7 @@
     </div>
 
     <div class="col-xs-9">
-      <div class="message-overview">
+      <div class="message-overview" id="message-overview">
         {{#if currentMessage}}
           <div class="message-time">{{renderMessageTime currentMessage.time}}</div>
           <div class="message-sender">{{currentMessage.sender}}</div>

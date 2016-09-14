@@ -32,22 +32,31 @@ Template.mailbox.helpers({
 Template.mailbox.onRendered(() => {
   // TODO: Make these two into a single function.
   FlowRouter.subsReady('messages', () => {
-    $('.message-preview-column').css('height', $(window).height() - $('.message-preview-column').offset().top);
+    $('#message-preview-column').css({
+      height: $(window).height() - $('#message-preview-column').offset().top
+    });
 
-    $('.message-overview').css('height', $(window).height() - $('.message-overview').offset().top);
+    $('#message-overview').css({
+      height: $(window).height() - $('#message-overview').offset().top
+    });
+
+    $(window).resize(() => {
+      $('#message-preview-column').css({
+        height: $(window).height() - $('#message-preview-column').offset().top
+      });
+
+      $('#message-overview').css({
+        height: $(window).height() - $('#message-overview').offset().top
+      });
+    })
   });
-
-  $(window).resize(() => {
-    $('.message-preview-column').css('height', $(window).height() - $('.message-preview-column').offset().top);
-
-    $('.message-overview').css('height', $(window).height() - $('.message-overview').offset().top);
-  })
 });
 
 Template.mailbox.events({
   'click .message-preview'(event) {
     let $this;
 
+    // Figure out what /this/ is.
     if ($(event.target).hasClass('message-preview')) {
       $this = $(event.target);
     } else if ($(event.target).parent().hasClass('message-preview')) {
@@ -56,14 +65,30 @@ Template.mailbox.events({
       $this = $(event.target).parentsUntil('.message-preview').parent();
     }
 
-    if ($this.data('id') == $('.message-overview').data('id')) {
+    // If it's the same, don't do anything.
+    if ($this.data('id') == $('#message-overview').data('id')) {
       return;
     }
 
+    // Set the current message.
     Template.instance().currentMessage.set(Messages.findOne({ _id: $this.data('id') }));
 
-    $('.message-overview').data('id', $this.data('id'));
+    // Set the new ID for later check.
+    $('#message-overview').data('id', $this.data('id'));
 
-    $('.message-content').css('height', $('.message-overview').outerHeight() - $('.message-time').outerHeight() - $('.message-sender').outerHeight() - $('.message-subject').outerHeight() - 10);
+    // Dear Meteor, please implement a callback for ReactiveVar#set. Signed, me.
+    setTimeout(function () {
+      let height = parseFloat($('#message-overview').outerHeight(), 10) - 10;
+
+      $('#message-overview > div').not('.message-content').each(function () {
+        height -= parseFloat($(this).outerHeight(), 10);
+      });
+
+      height = height.toString() + 'px';
+
+      $('#message-overview > .message-content').css({
+        height: height
+      });
+    }, 10)
   }
 });
