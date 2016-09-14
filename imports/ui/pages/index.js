@@ -7,6 +7,7 @@ import './mailbox.js';
 import './forms.js';
 import './graphs.js';
 import './tables.js';
+import './other-layouts.js';
 
 // Elements
 import './alerts.js';

@@ -57,6 +57,12 @@ FlowRouter.route('/tables', {
   }
 });
 
+FlowRouter.route('/other-layouts', {
+  action() {
+    BlazeLayout.render('overlord', { main: 'otherLayouts' });
+  }
+});
+
 FlowRouter.route('/alerts', {
   action() {
     BlazeLayout.render('overlord', { main: 'alerts' });
