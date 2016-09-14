@@ -92,3 +92,7 @@ Template.mailbox.events({
     }, 10)
   }
 });
+
+Template.mailbox.onDestroyed(() => {
+  $(window).off('resize');
+});
