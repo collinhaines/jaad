@@ -13,6 +13,14 @@
   background-color: #fff;
 
   overflow-y: auto;
+
+  .message-preview:first-child {
+    margin-top: 0;
+  }
+
+  &.list-group {
+    margin-bottom: 0;
+  }
 }
 
 .message-preview {
@@ -24,8 +32,18 @@
   padding-right: 15px;
   padding-bottom: 10px;
 
-  border-bottom: 1px solid rgb(190, 190, 190);
-  border-bottom: 1px solid rgba(190, 190, 190, 0.5);
+  border-left: none;
+  border-right: none;
+
+  &:first-child {
+    margin-top: -10px;
+
+    border-top: none;
+  }
+
+  &:last-child {
+    margin-bottom: -20px;
+  }
 
   > .message-preview-sender {
     float: left;
