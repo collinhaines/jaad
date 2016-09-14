@@ -107,3 +107,14 @@ Template.dashboard.onRendered(() => {
     series: [40, 20, 25]
   });
 });
+
+Template.dashboard.events({
+  // Simulate the active navigation.
+  'click .panel a[href="/mailbox"]'() {
+    $('li.active').removeClass('active');
+
+    $('.nav a[href="/mailbox"]')
+      .parent()
+      .addClass('active');
+  }
+});
