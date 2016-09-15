@@ -7,6 +7,7 @@ import '/imports/ui/components/sidebar.js';
 import '/imports/ui/components/footer.js';
 
 // Load layout.
+import '/imports/ui/layouts/exterior.js';
 import '/imports/ui/layouts/overlord.js';
 
 // Load pages.
@@ -95,18 +96,24 @@ FlowRouter.route('/other-elements', {
 
 FlowRouter.route('/404', {
   action() {
-    BlazeLayout.render('overlord', { main: '404' });
+    BlazeLayout.render('exterior', { page: '404' });
   }
 });
 
 FlowRouter.route('/500', {
   action() {
-    BlazeLayout.render('overlord', { main: '500' });
+    BlazeLayout.render('exterior', { page: '500' });
   }
 });
 
 FlowRouter.route('/login', {
   action() {
-    BlazeLayout.render('overlord', { main: 'login' });
+    BlazeLayout.render('exterior', { page: 'login' });
   }
 });
+
+FlowRouter.notFound = {
+  action() {
+    BlazeLayout.render('exterior', { page: '404' });
+  }
+};

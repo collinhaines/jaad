@@ -1,0 +1,66 @@
+//
+// Login
+// ------------------------------
+
+//
+// Portions of this content is credited to Ryan Walters.
+//   Link: https://jsfiddle.net/RyanWalters/z9ymd852/
+//
+
+.form-login {
+  .panel-body {
+    padding-top: 30px;
+  }
+
+  .form-group {
+    position: relative;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &.focused,
+    &.has-text {
+      color: #bbb;
+
+      .control-label {
+        top: -25px;
+
+        .opacity(1);
+        .scale(0.75);
+      }
+    }
+  }
+
+  .control-label {
+    position: absolute;
+    top: -21px;
+    z-index: 1;
+
+    margin-left: 32px;
+
+    font-size: 16px;
+    font-weight: 400;
+
+    .opacity(0.4);
+    pointer-events: none;
+
+    .scale(1);
+    .translate3d(0, 22px, 0);
+    .transform-origin(left top);
+    .transition-duration(240ms);
+  }
+
+  .form-control {
+    margin-bottom: 25px;
+
+    &::-webkit-input-placeholder {
+      color: transparent;
+      .transition-duration(240ms);
+    }
+
+    &:focus::-webkit-input-placeholder {
+      .transition(none);
+    }
+  }
+}
