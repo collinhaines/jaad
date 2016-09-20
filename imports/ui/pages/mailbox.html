@@ -7,29 +7,37 @@
   </div>
 
   <div class="row">
-    <div class="col-xs-3">
-      <ul class="list-group message-preview-column" id="message-preview-column">
-        {{#each message in messages}}
-          <li class="list-group-item message-preview" data-id="{{message._id}}">
-            <time class="message-preview-time">{{renderPreviewTime message.time}}</time>
-            <h4 class="list-group-item-heading">{{message.sender}}</h4>
-            <h5 class="list-group-item-heading">{{message.subject}}</h5>
-            <p class="list-group-item-text message-preview-content">{{{message.content}}}</p>
-          </li>
-        {{/each}}
-      </ul>
-    </div>
+    <div class="col-xs-12">
+      <div class="panel panel-default" style="margin-bottom: 0;">
+        <div class="panel-body" style="padding: 0;">
+          <div class="row">
+            <div class="col-md-3">
+              <ul class="list-group message-preview-column" id="message-preview-column">
+                {{#each message in messages}}
+                  <li class="list-group-item message-preview" data-id="{{message._id}}">
+                    <time class="message-preview-time">{{renderPreviewTime message.time}}</time>
+                    <h4 class="list-group-item-heading">{{message.sender}}</h4>
+                    <h5 class="list-group-item-heading">{{message.subject}}</h5>
+                    <p class="list-group-item-text message-preview-content">{{{message.content}}}</p>
+                  </li>
+                {{/each}}
+              </ul>
+            </div>
 
-    <div class="col-xs-9">
-      <div class="message-overview" id="message-overview">
-        {{#if currentMessage}}
-          <div class="message-time">{{renderMessageTime currentMessage.time}}</div>
-          <div class="message-sender">{{currentMessage.sender}}</div>
-          <div class="message-subject">{{currentMessage.subject}}</div>
-          <div class="message-content">{{{currentMessage.content}}}</div>
-        {{else}}
-          <h3 class="no-message">No Message Selected</h3>
-        {{/if}}
+            <div class="col-md-9">
+              <div class="message-overview" id="message-overview">
+                {{#if currentMessage}}
+                  <div class="message-time">{{renderMessageTime currentMessage.time}}</div>
+                  <div class="message-sender">{{currentMessage.sender}}</div>
+                  <div class="message-subject">{{currentMessage.subject}}</div>
+                  <div class="message-content">{{{currentMessage.content}}}</div>
+                {{else}}
+                  <h3 class="no-message">No Message Selected</h3>
+                {{/if}}
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>

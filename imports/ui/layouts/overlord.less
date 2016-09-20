@@ -41,9 +41,13 @@ small {
   color: @text-muted;
 }
 
-.panel-heading > .panel-subheading {
-  margin-bottom: 0;
+.panel {
+  .box-shadow(0 0 3px 0 rgba(0, 0, 0, 0.75));
 
-  color: @headings-small-color;
-  font-size: 85%;
+  .panel-heading > .panel-subheading {
+    margin-bottom: 0;
+
+    color: @headings-small-color;
+    font-size: 85%;
+  }
 }
