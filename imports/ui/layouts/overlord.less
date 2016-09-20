@@ -24,10 +24,13 @@ body {
 
 header,
 main {
-  position: absolute;
   left: 0;
 
   .transition(left 0.6s ease-in-out);
+
+  @media (max-width: 768px) {
+    position: absolute;
+  }
 
   &.sidebar-open {
     left: 54px;
