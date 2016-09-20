@@ -30,25 +30,12 @@ Template.mailbox.helpers({
 });
 
 Template.mailbox.onRendered(() => {
-  // TODO: Make these two into a single function.
   FlowRouter.subsReady('messages', () => {
-    $('#message-preview-column').css({
-      height: $(window).height() - $('#message-preview-column').offset().top
-    });
-
-    $('#message-overview').css({
-      height: $(window).height() - $('#message-overview').offset().top
-    });
+    renderMailboxArea();
 
     $(window).resize(() => {
-      $('#message-preview-column').css({
-        height: $(window).height() - $('#message-preview-column').offset().top
-      });
-
-      $('#message-overview').css({
-        height: $(window).height() - $('#message-overview').offset().top
-      });
-    })
+      renderMailboxArea();
+    });
   });
 });
 
@@ -76,6 +63,20 @@ Template.mailbox.events({
     // Set the new ID for later check.
     $('#message-overview').data('id', $this.data('id'));
 
+    if ($(window).width() <= 768) {
+      $('#message-overview')
+        .css('display', 'block')
+        .parent()
+        .css({
+          position: 'absolute',
+          top:      '20px'
+        })
+        .addClass('animated slideInUp')
+        .one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
+          $(this).removeClass('slideInUp');
+        });
+    }
+
     // Dear Meteor, please implement a callback for ReactiveVar#set. Signed, me.
     setTimeout(function () {
       let height = parseFloat($('#message-overview').outerHeight(), 10) - 10;
@@ -90,9 +91,48 @@ Template.mailbox.events({
         height: height
       });
     }, 10)
+  },
+
+  'click #message-overview .close'(event) {
+    if ($(window).width() <= 768) {
+      $('#message-overview')
+        .parent()
+        .addClass('fadeOutDown')
+        .one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
+          $(this)
+            .removeClass('animated fadeOutDown')
+            .removeProp('style')
+
+          $('#message-overview')
+            .removeProp('data-id')
+            .css('display', '');
+
+          Template.instance().currentMessage.set(false);
+        });
+    } else {
+      $('#message-overview').removeProp('data-id');
+
+      Template.instance().currentMessage.set(false);
+    }
   }
 });
 
 Template.mailbox.onDestroyed(() => {
   $(window).off('resize');
 });
+
+function renderMailboxArea() {
+  $('#message-preview-column').css({
+    height: $(window).height() - $('#message-preview-column').offset().top
+  });
+
+  if ($(window).width() > 768) {
+    $('#message-overview').css({
+      height: $(window).height() - $('#message-overview').offset().top
+    });
+  } else {
+    $('#message-overview').css({
+      height: parseInt($('#message-preview-column').css('height'), 10) - 20
+    });
+  }
+}

@@ -27,6 +27,7 @@
             <div class="col-md-9">
               <div class="message-overview" id="message-overview">
                 {{#if currentMessage}}
+                  <button type="button" class="close"><i class="fa fa-close"></i></button>
                   <div class="message-time">{{renderMessageTime currentMessage.time}}</div>
                   <div class="message-sender">{{currentMessage.sender}}</div>
                   <div class="message-subject">{{currentMessage.subject}}</div>
