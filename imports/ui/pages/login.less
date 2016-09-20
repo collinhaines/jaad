@@ -34,7 +34,7 @@
 
   .control-label {
     position: absolute;
-    top: -21px;
+    top: -10px;
     z-index: 1;
 
     margin-left: 32px;
@@ -49,6 +49,10 @@
     .translate3d(0, 22px, 0);
     .transform-origin(left top);
     .transition-duration(240ms);
+
+    @media (min-width: 768px) {
+      top: -21px;
+    }
   }
 
   .form-control {
