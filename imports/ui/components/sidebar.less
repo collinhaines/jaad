@@ -3,40 +3,60 @@
 // ------------------------------
 
 .sidebar {
+  bottom: 0;
+  z-index: 1000;
+
   display: none;
+
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  background-color: @brand-primary;
+
+  &.sidebar-open {
+    position: absolute;
+    top: -60px;
+    left: -54px;
+
+    display: block;
+  }
+
+  @media (max-width: 765px) {
+    span,
+    .nav-category {
+      display: none;
+    }
+  }
 
   .fa {
     min-width: 20px;
-    margin-right: 5px;
 
     text-align: center;
-  }
-
-  .nav-category {
-    margin-left: 20px;
-    margin-right: 20px;
-    padding-top: 10px;
-    padding-bottom: 5px;
-
-    color: #BEBEBE;
-
-    border-bottom: 1px solid rgb(190, 190, 190);
-    border-bottom: 1px solid rgba(190, 190, 190, 0.3);
   }
 
   @media (min-width: 768px) {
     position: fixed;
     top: 51px;
     left: 0;
-    bottom: 0;
-    z-index: 1000;
 
     display: block;
     padding: 20px;
-    overflow-x: hidden;
-    overflow-y: auto;
 
-    background-color: @brand-primary;
+    .fa {
+      margin-right: 5px;
+    }
+
+    .nav-category {
+      margin-left: 20px;
+      margin-right: 20px;
+      padding-top: 10px;
+      padding-bottom: 5px;
+
+      color: #BEBEBE;
+
+      border-bottom: 1px solid rgb(190, 190, 190);
+      border-bottom: 1px solid rgba(190, 190, 190, 0.3);
+    }
   }
 }
 

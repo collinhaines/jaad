@@ -17,6 +17,7 @@ Template.sidebar.events({
 
     // Add new active.
     $(event.target)
+      .parentsUntil('li')
       .parent()
       .addClass('active');
   }

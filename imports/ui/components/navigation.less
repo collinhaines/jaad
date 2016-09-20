@@ -1,0 +1,31 @@
+//
+// Navigation
+// ------------------------------
+
+.container-navigation {
+  @media (min-width: @grid-float-breakpoint) {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .navbar-brand {
+    @media (max-width: @grid-float-breakpoint) {
+      position: absolute;
+      left: 0;
+      right: 0;
+
+      text-align: center;
+    }
+  }
+
+  .sidebar-toggle {
+    position: absolute;
+    top: 7px;
+    left: 15px;
+    z-index: 1;
+
+    @media (min-width: @grid-float-breakpoint) {
+      display: none;
+    }
+  }
+}
