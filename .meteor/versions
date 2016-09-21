@@ -7,7 +7,7 @@ binary-heap@1.0.9
 blaze@2.1.9
 blaze-html-templates@1.0.5
 blaze-tools@1.0.10
-boilerplate-generator@1.0.9
+boilerplate-generator@1.0.10
 caching-compiler@1.1.7
 caching-html-compiler@1.0.7
 callback-hook@1.0.9
@@ -48,7 +48,7 @@ mobile-experience@1.0.4
 mobile-status-bar@1.0.12
 modules@0.7.6
 modules-runtime@0.7.6
-momentjs:moment@2.15.0
+momentjs:moment@2.15.1
 mongo@1.1.12
 mongo-id@1.0.5
 natestrauser:animate-css@3.5.1
