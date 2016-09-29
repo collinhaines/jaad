@@ -1,2 +1,2 @@
-imports/library/*      linguist-vendored
-imports/stylesheets/*  linguist-vendored
+imports/library/*         linguist-vendored
+imports/ui/stylesheets/*  linguist-vendored
