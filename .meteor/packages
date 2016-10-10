@@ -19,9 +19,9 @@ ecmascript@0.5.8_1            # Enable ECMAScript2015+ syntax in app code
 shell-server@0.2.1            # Server-side component of the `meteor shell` command
 
 insecure@1.0.7                # Allow all DB writes from clients (for prototyping)
-less@2.7.5_1
-kadira:flow-router
-kadira:blaze-layout
-rzymek:fullcalendar
-mfpierre:chartist-js
-natestrauser:animate-css
+less@2.7.5_1                  # Leaner CSS language.
+kadira:flow-router            # Carefully Designed Client Side Router for Meteor
+kadira:blaze-layout           # Layout Manager for Blaze (works well with FlowRouter)
+rzymek:fullcalendar           # Full-sized drag & drop event calendar (jQuery plugin)
+mfpierre:chartist-js          # Simple responsive charts
+natestrauser:animate-css      # Animate.css packaged for meteor
